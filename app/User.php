@@ -8,6 +8,11 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+
+    public function people(){
+        return $this->hasManyThrough('App\People');
+    }
+
     use Notifiable;
 
     /**
