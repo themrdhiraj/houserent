@@ -8,7 +8,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            @if(Auth::user())
+                <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/rooms">Rooms</a>
                 </li>
@@ -34,7 +35,19 @@
                         <a class="dropdown-item" href="/peoples/create">Add people</a>
                     </div>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Rent
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/rents">View due rents</a>
+                        <a class="dropdown-item" href="/rents#paid">View paid rents</a>
+                    </div>
+                </li>
+
             </ul>
+            @endif
             <!-- Right Side Of Navbar -->
             @include('inc.user')
         </div>

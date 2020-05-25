@@ -14,7 +14,6 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Icons  -->
-        <!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
         <script src="{{asset('icon/icon.js')}}"></script>
     </head>
     <body>
@@ -27,5 +26,6 @@
                 @yield('content')
             </main>
         </div>
+
     </body>
 </html>

@@ -28,5 +28,6 @@ Auth::routes();
 Route::resource('services', 'HouseServices');
 Route::resource('peoples', 'PeoplesController');
 Route::resource('rooms', 'RoomsController');
+Route::resource('rents', 'RentsController');
 
 Route::get('/home', 'HomeController@index');
