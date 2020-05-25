@@ -18,6 +18,7 @@
 							@endfor
 						</div>
 					</nav>
+					<br>
 					<div class="tab-content" id="nav-tabContent">
 						@for ($l = 1; $l <= $floor; $l++)
 						<div class="tab-pane fade" id="nav-{{$l}}" role="tabpanel" aria-labelledby="nav-{{$l}}-tab">
@@ -31,14 +32,13 @@
 											<h5 class="card-title">Room {{$m}} of floor {{$l}}.
 											@foreach($peoples as $people)
 											<span class="badge badge-danger">@if($people->people_selected_room.$people->people_selected_floor == $m.$l)
-												Already Rented
+												Already Rented to '{{$people->people_name}}'
 											@endif</span>
 											@endforeach
 											</h5>
 											
 										</div>
 										<div class="card-body">
-											
 											<form action="/peoples/create" method="GET">
 												<input type="hidden" name="floor" value="{{$l}}">
 												<input type="hidden" name="room" value="{{$m}}">

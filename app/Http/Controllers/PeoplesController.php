@@ -98,7 +98,8 @@ class PeoplesController extends Controller
      */
     public function show($id)
     {
-        //
+        $people = People::find($id);
+        return view('showPeopleProfile')->with('people', $people);
     }
 
     /**
@@ -128,7 +129,6 @@ class PeoplesController extends Controller
             'people_home_address' => 'required',
             'people_designation' => 'required',
             'people_total' => 'required',
-            'people_room_id' => 'required',
             
         ]);
 
@@ -140,7 +140,6 @@ class PeoplesController extends Controller
         $people->people_home_address = $request->input('people_home_address');
         $people->people_designation = $request->input('people_designation');
         $people->people_total = $request->input('people_total');
-        $people->people_room_id = $request->input('people_room_id');
 
         $people->user_id = auth()->user()->id;
 
