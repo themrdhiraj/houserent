@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\People;
 use App\Service;
+use App\Payment;
 
 class RentsController extends Controller
 {
@@ -48,8 +49,24 @@ class RentsController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        for ($i = 0; $i < count($request->payment_services); $i++) {
+        $answers[] = [
+            'payment_services' => $request->payment_services[$i],
+            'payment_money' => $request->payment_money[$i],
+            'people_id' => $request->people_id,
+            'created_at' => date('Y-m-d h:i:s'),
+
+        ];
+    }
+    $success = Payment::insert($answers);
+
         
+
+        if ($success) {
+            return redirect('/rents')->with('success', 'Payment successful!');
+        }else{
+            return redirect('/rents')->with('error', 'There was a problem while adding a person!');
+        }
     }
 
     /**
@@ -60,8 +77,14 @@ class RentsController extends Controller
      */
     public function show($id)
     {
+        $people_id = $id;
         $services = Service::all();
-        return view('collectRent')->with('services',$services);
+
+        $data = array(
+            'people_id' => $people_id,
+            'services' => $services
+        );
+        return view('collectRent')->with($data);
     }
 
     /**
@@ -93,6 +116,25 @@ class RentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    public function allRents()
+    {
+       $data = array(
+            'peoples' => People::join('payments', 'payments.people_id', '=', 'people.id')->join('services', 'services.id', '=', 'payments.payment_services')->paginate(10)
+       );
+       
+       return view('allRents')->with($data);
+    }
+
+
+    public function paidRents($id)
+    {
+        $data = array(
+            'payments' => Payment::where('people_id',$id)->join('services', 'services.id', '=', 'payments.payment_services')->join('people', 'payments.people_id', '=', 'people.id')->get()
+        );
+        return view('paidRents')->with($data);
+    }
     public function destroy($id)
     {
         //

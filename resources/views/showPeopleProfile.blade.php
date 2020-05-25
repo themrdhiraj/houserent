@@ -31,7 +31,7 @@
                     <a href="/peoples/{{ $people->id }}/edit" class="btn btn-primary">Edit</a>
                     {!! Form::open(['action' => ['PeoplesController@destroy', $people->id ],'method' => 'POST',]) !!}
                     {{Form::hidden('_method', 'DELETE')}}
-                    {{Form::submit('Delete',['class' => 'btn btn-dark'])}}
+                    {{Form::submit('Delete',['class' => 'btn btn-dark','onclick' => 'return confirm("Are you sure want to delete?")'])}}
                     
                     {!! Form::close() !!}
                 </div>

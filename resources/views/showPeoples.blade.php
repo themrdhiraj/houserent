@@ -9,32 +9,35 @@
                     @if(count ($peoples) > 0)
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Action</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php $i = 1 @endphp
-                            @foreach($peoples as $people)
+                            <thead>
                                 <tr>
-                                <th scope="row">{{$i++}}</th>
-                                <td>{{$people->people_name}}</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        {!! Form::open(['action' => ['PeoplesController@show', $people->id ],'method' => 'POST',]) !!}
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php $i = 1 @endphp
+                                @foreach($peoples as $people)
+                                <tr>
+                                    <th scope="row">{{$i++}}</th>
+                                    <td>{{$people->people_name}}</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            {!! Form::open(['action' => ['PeoplesController@show', $people->id ],'method' => 'POST',]) !!}
                                             {{Form::submit('View profile',['class' => 'btn btn-primary'])}}
                                             {{Form::hidden('_method','GET')}}
-                                        {!! Form::close() !!}
+                                            {!! Form::close() !!}
+                                            {!! Form::open(['action' => ['RentsController@paidRents', $people->id ],'method' => 'POST',]) !!}
+                                            {{Form::submit('Payment Details',['class' => 'btn btn-dark'])}}
+                                            {{Form::hidden('_method','GET')}}
+                                            {!! Form::close() !!}
                                         </div>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                     {{$peoples->links()}}
                     @else

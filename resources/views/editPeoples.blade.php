@@ -64,7 +64,7 @@
                     <div class="form-group">
                         {{Form::submit('Update',['class' => 'btn btn-primary'])}}
                     </div>
-                        {{Form::hidden('_method', 'PUT')}}
+                    {{Form::hidden('_method', 'PUT')}}
                     {!! Form::close() !!}
                 </div>
             </div>

@@ -42,7 +42,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/rents">View due rents</a>
-                        <a class="dropdown-item" href="/rents#paid">View paid rents</a>
+                        <a class="dropdown-item" href="/allRents">View paid rents</a>
                     </div>
                 </li>
 

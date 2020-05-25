@@ -17,20 +17,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1; ?>
+                            @php $i = 1; @endphp
                             @foreach($services as $service)
-                                <tr>
+                            <tr>
                                 <th scope="row">{{$i++}}</th>
                                 <td>{{$service->service_name}}</td>
                                 <td>Rs. {{$service->service_money}} |-</td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                            <a href="/services/{{ $service->id }}/edit" class="btn btn-primary">Edit</a>
+                                        <a href="/services/{{ $service->id }}/edit" class="btn btn-primary">Edit</a>
                                         {!! Form::open(['action' => ['HouseServices@destroy', $service->id ],'method' => 'POST',]) !!}
-                                            {{Form::hidden('_method', 'DELETE')}}
-                                            {{Form::submit('Delete',['class' => 'btn btn-dark'])}}
+                                        {{Form::hidden('_method', 'DELETE')}}
+                                        {{Form::submit('Delete',['class' => 'btn btn-dark','onclick' => 'return confirm("Are you sure want to delete?")'])}}
                                         {!! Form::close() !!}
-                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

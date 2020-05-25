@@ -22,6 +22,8 @@ Route::get('/', 'HomeController@index');
 Route::get('/profile', 'HomeController@profile');
 
 Route::get('/floorUpdate', 'HomeController@floorUpdate');
+Route::get('/paidRents/{id}', 'RentsController@paidRents');
+Route::get('/allRents', 'RentsController@allRents');
 
 Auth::routes();
 

@@ -4,25 +4,27 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Due rents</div>
+                <div class="card-header">Paid rents <span class="badge badge-info">{{$payments[0]->people_name}}</span></div>
                 <div class="card-body">
-                    @if(count ($peoples) > 0)
+                    @if(count ($payments) > 0)
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Service</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php $i = 1 @endphp
-                                @foreach($peoples as $people)
+                                @foreach($payments as $payment)
                                 <tr>
                                     <th scope="row">{{$i++}}</th>
-                                    <td>{{$people->people_name}}</td>
-                                    <td><a href="/rents/{{$people->id}}" class="btn btn-dark"><i class="fas fa-money-check-alt"></i> Receive payment</a></td>
+                                    <td>{{$payment->service_name}}</td>
+                                    <td>{{$payment->payment_money}}</td>
+                                    <td>{{$payment->created_at}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
