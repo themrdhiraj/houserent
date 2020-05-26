@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Add services <span class="badge badge-danger">Not completed</span></div>
+                <div class="card-header">Collect rent <span class="badge badge-info">{{$people->people_name}}</span></div>
                 <div class="card-body">
                     {!! Form::open(['action' => 'RentsController@store', 'method' => 'POST']) !!}
                     
@@ -35,7 +35,7 @@
                             {{Form::text('total_amount','later',['class' => 'form-control', 'readonly', 'id' => 'serviceMoney'])}}
                         </div>
                     </div>
-                    <input type="hidden" name="people_id" value="{{$people_id}}">
+                    <input type="hidden" name="people_id" value="{{$people->id}}">
                     <div class="form-group">
                         {{Form::submit('Submit',['class' => 'btn btn-primary'])}}
                     </div>

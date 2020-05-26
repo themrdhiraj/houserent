@@ -15,6 +15,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Icons  -->
         <script src="{{asset('icon/icon.js')}}"></script>
+        
     </head>
     <body>
         <div id="app">
@@ -26,6 +27,5 @@
                 @yield('content')
             </main>
         </div>
-
     </body>
 </html>

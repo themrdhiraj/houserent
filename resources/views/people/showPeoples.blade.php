@@ -23,16 +23,15 @@
                                     <th scope="row">{{$i++}}</th>
                                     <td>{{$people->people_name}}</td>
                                     <td>
-                                        <div class="btn-group" role="group">
                                             {!! Form::open(['action' => ['PeoplesController@show', $people->id ],'method' => 'POST',]) !!}
                                             {{Form::submit('View profile',['class' => 'btn btn-primary'])}}
                                             {{Form::hidden('_method','GET')}}
                                             {!! Form::close() !!}
+                                            <br>
                                             {!! Form::open(['action' => ['RentsController@paidRents', $people->id ],'method' => 'POST',]) !!}
                                             {{Form::submit('Payment Details',['class' => 'btn btn-dark'])}}
                                             {{Form::hidden('_method','GET')}}
                                             {!! Form::close() !!}
-                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

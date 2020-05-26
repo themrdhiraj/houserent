@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Paid rents</div>
+                <div class="card-header">Paid rents <a href="/rents" class="btn btn-dark float-right">Collect rent</a></div>
                 <div class="card-body">
                     @if(count ($peoples) > 0)
                     <div class="table-responsive">
@@ -34,7 +34,7 @@
                         {{$peoples->links()}}
                     </div>
                     @else
-                    No peoples added yet!!!
+                    No payments yet!!!
                     @endif
                 </div>
             </div>

@@ -99,7 +99,7 @@ class PeoplesController extends Controller
     public function show($id)
     {
         $people = People::find($id);
-        return view('people/showPeopleProfile')->with('people', $people);
+        return view('profile/showPeopleProfile')->with('people', $people);
     }
 
     /**

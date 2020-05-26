@@ -24,13 +24,12 @@
                                 <td>{{$service->service_name}}</td>
                                 <td>Rs. {{$service->service_money}} |-</td>
                                 <td>
-                                    <div class="btn-group" role="group">
                                         <a href="/services/{{ $service->id }}/edit" class="btn btn-primary">Edit</a>
+                                        <br><br>
                                         {!! Form::open(['action' => ['HouseServices@destroy', $service->id ],'method' => 'POST',]) !!}
                                         {{Form::hidden('_method', 'DELETE')}}
                                         {{Form::submit('Delete',['class' => 'btn btn-dark','onclick' => 'return confirm("Are you sure want to delete?")'])}}
                                         {!! Form::close() !!}
-                                    </div>
                                 </td>
                             </tr>
                             @endforeach

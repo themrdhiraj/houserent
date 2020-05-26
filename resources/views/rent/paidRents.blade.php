@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Paid rents <span class="badge badge-info">{{$payments[0]->people_name}}</span></div>
+                <div class="card-header">Paid rents <span class="badge badge-info">{{isset($payments[0]->people_name) ? $payments[0]->people_name : 'No payment yet'}}</span></div>
                 <div class="card-body">
                     @if(count ($payments) > 0)
                     <div class="table-responsive">
@@ -31,7 +31,7 @@
                         </table>
                     </div>
                     @else
-                    No peoples added yet!!!
+                    No payment yet !!!
                     @endif
                 </div>
             </div>
