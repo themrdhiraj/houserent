@@ -15,7 +15,8 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">{{$service->service_name}}</div>
                             </div>
-                            {{ Form::number($service->id,$service->service_money,['class' => 'form-control', 'placeholder' => 'Water', 'id' => $service->service_name]) }}
+                            <input type="hidden" name="payment_services[]" value="{{$service->id}}">
+                            {{ Form::number('payment_money[]',$service->service_money,['class' => 'form-control', 'placeholder' => 'Water', 'id' => $service->service_name]) }}
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     {{ Form::checkbox($service->id,$service->service_money) }}
@@ -23,8 +24,6 @@
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" name="payment_services[]" value="{{$service->id}}">
-                    <input type="hidden" name="payment_money[]" value="{{$service->service_money}}">
                     @endforeach
                     <hr>
                     <div class="form-group">

@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">All peoples <a href="/rooms" class="btn btn-primary float-right">Add new people</a></div>
+                <div class="card-header">All peoples <a href="/peoples/create" class="btn btn-primary float-right">Add new people</a></div>
                 <div class="card-body">
                     @if(count ($peoples) > 0)
                     <div class="table-responsive">

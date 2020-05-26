@@ -27,7 +27,7 @@ class PeoplesController extends Controller
     public function index()
     {
         $peoples = People::orderBy('id','asc')->paginate(5);
-        return view('showPeoples')->with('peoples', $peoples);
+        return view('people/showPeoples')->with('peoples', $peoples);
     }
 
     /**
@@ -45,9 +45,9 @@ class PeoplesController extends Controller
         );
 
         if(is_null($floor) && is_null($room)){
-            return redirect('/rooms')->with('error', 'Select room first!!!');
+            return redirect('/rooms')->with('info', 'Select room first!!!');
         }else{
-            return view('addPeoples')->with('data', $data);
+            return view('people/addPeoples')->with('data', $data);
         }
         
     }
@@ -99,7 +99,7 @@ class PeoplesController extends Controller
     public function show($id)
     {
         $people = People::find($id);
-        return view('showPeopleProfile')->with('people', $people);
+        return view('people/showPeopleProfile')->with('people', $people);
     }
 
     /**
@@ -111,7 +111,7 @@ class PeoplesController extends Controller
     public function edit($id)
     {
         $people = People::find($id);
-        return view('editPeoples')->with('people', $people);
+        return view('people/editPeoples')->with('people', $people);
     }
 
     /**

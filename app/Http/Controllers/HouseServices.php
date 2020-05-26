@@ -27,7 +27,7 @@ class HouseServices extends Controller
     public function index()
     {
         $services = Service::orderBy('id', 'asc')->paginate(5);
-        return view('showServices')->with('services', $services);
+        return view('service/showServices')->with('services', $services);
     }
 
     /**
@@ -37,7 +37,7 @@ class HouseServices extends Controller
      */
     public function create()
     {
-        return view('addServices');
+        return view('service/addServices');
     }
 
     /**
@@ -88,7 +88,7 @@ class HouseServices extends Controller
     public function edit($id)
     {
         $service = Service::find($id);
-        return view('editServices')->with('service', $service);
+        return view('service/editServices')->with('service', $service);
     }
 
     /**

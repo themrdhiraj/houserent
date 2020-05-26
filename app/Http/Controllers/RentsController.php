@@ -28,7 +28,7 @@ class RentsController extends Controller
     public function index()
     {
         $peoples = People::all();
-        return view('dueRents')->with('peoples',$peoples);
+        return view('rent/dueRents')->with('peoples',$peoples);
     }
 
     /**
@@ -52,7 +52,7 @@ class RentsController extends Controller
         for ($i = 0; $i < count($request->payment_services); $i++) {
         $answers[] = [
             'payment_services' => $request->payment_services[$i],
-            'payment_money' => $request->payment_money[$i],
+            'payment_money' => isset($request->payment_money[$i]) ? $request->payment_money[$i] : '0',
             'people_id' => $request->people_id,
             'created_at' => date('Y-m-d h:i:s'),
 
@@ -84,7 +84,7 @@ class RentsController extends Controller
             'people_id' => $people_id,
             'services' => $services
         );
-        return view('collectRent')->with($data);
+        return view('rent/collectRent')->with($data);
     }
 
     /**
@@ -124,7 +124,7 @@ class RentsController extends Controller
             'peoples' => People::join('payments', 'payments.people_id', '=', 'people.id')->join('services', 'services.id', '=', 'payments.payment_services')->paginate(10)
        );
        
-       return view('allRents')->with($data);
+       return view('rent/allRents')->with($data);
     }
 
 
@@ -133,7 +133,7 @@ class RentsController extends Controller
         $data = array(
             'payments' => Payment::where('people_id',$id)->join('services', 'services.id', '=', 'payments.payment_services')->join('people', 'payments.people_id', '=', 'people.id')->get()
         );
-        return view('paidRents')->with($data);
+        return view('rent/paidRents')->with($data);
     }
     public function destroy($id)
     {

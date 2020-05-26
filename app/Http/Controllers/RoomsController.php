@@ -36,7 +36,7 @@ class RoomsController extends Controller
             'peoples' => $peoples,
         );
 
-        return view('showRooms')->with($data);
+        return view('room/showRooms')->with($data);
     }
 
     /**
@@ -46,7 +46,7 @@ class RoomsController extends Controller
      */
     public function create()
     {
-        return view('addRooms');
+        return view('room/addRooms');
     }
 
     /**

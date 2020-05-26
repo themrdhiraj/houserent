@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function profile()
     {
         $user = User::get()->first();
-        return view('profile')->with('user', $user);
+        return view('profile/profile')->with('user', $user);
     }
 
     public function floorUpdate(Request $request)
