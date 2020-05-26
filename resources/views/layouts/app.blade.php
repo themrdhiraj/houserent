@@ -15,7 +15,6 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Icons  -->
         <script src="{{asset('icon/icon.js')}}"></script>
-        
     </head>
     <body>
         <div id="app">
@@ -25,7 +24,13 @@
                     @include('inc.messages')
                 </div>
                 @yield('content')
+                
             </main>
         </div>
+        <footer class="footer mt-auto py-3" style="text-align: center">
+            <div class="container-footer">
+                <span class="text-muted">©TheMrDhiraj {{date('Y')}} | House Rent Management</span>
+            </div>
+        </footer>
     </body>
 </html>
