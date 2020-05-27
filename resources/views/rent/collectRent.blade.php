@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Collect rent <span class="badge badge-info">{{$people->people_name}}</span></div>
+                <div class="card-header">Collect rent <span class="badge badge-info"><i class="fas fa-user"></i> {{$people->people_name}}</span></div>
                 <div class="card-body">
                     {!! Form::open(['action' => 'RentsController@store', 'method' => 'POST']) !!}
                     
@@ -16,25 +16,20 @@
                                 <div class="input-group-text">{{$service->service_name}}</div>
                             </div>
                             <input type="hidden" name="payment_services[]" value="{{$service->id}}">
-                            {{ Form::number('payment_money[]',$service->service_money,['class' => 'form-control', 'placeholder' => 'Water', 'id' => $service->service_name]) }}
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    {{ Form::checkbox($service->id,$service->service_money) }}
-                                </div>
-                            </div>
+                            {{ Form::number('payment_money[]',$service->service_money,['class' => 'form-control', 'placeholder' => 'eg. 1000', 'id' => $service->service_name]) }}
                         </div>
                     </div>
                     @endforeach
-                    <hr>
+                    <!-- <hr>
                     <div class="form-group">
-                        {{Form::label('total_amount','',['class' => 'sr-only'])}}
+                        <label class="sr-only"></label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Total amount</div>
                             </div>
-                            {{Form::text('total_amount','later',['class' => 'form-control', 'readonly', 'id' => 'serviceMoney'])}}
+                            <input type="number" name="" class="form-control" disabled value="6690">
                         </div>
-                    </div>
+                    </div> -->
                     <input type="hidden" name="people_id" value="{{$people->id}}">
                     <div class="form-group">
                         {{Form::submit('Submit',['class' => 'btn btn-primary'])}}

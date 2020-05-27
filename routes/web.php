@@ -17,13 +17,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'RoomsController@index');
 
 Route::get('/profile', 'HomeController@profile');
 
 Route::get('/floorUpdate', 'HomeController@floorUpdate');
 Route::get('/paidRents/{id}', 'RentsController@paidRents');
 Route::get('/allRents', 'RentsController@allRents');
+
+
+Route::get('/help', 'HomeController@help');
 
 Auth::routes();
 

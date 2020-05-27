@@ -9,14 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             @if(Auth::user())
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/rooms">Rooms</a>
-                </li>
-
+            <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="/rooms"><i class="fas fa-building"></i> Rooms</a>
+                </li> -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Services
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                        <i class="fas fa-cubes"></i> Services
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/services/create">Add services</a>
@@ -25,27 +24,25 @@
                         <a class="dropdown-item" href="#">Something else here</a> -->
                     </div>
                 </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Peoples
+                        <i class="fas fa-users"></i> Peoples
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/peoples">View peoples</a>
                         <a class="dropdown-item" href="/peoples/create">Add people</a>
                     </div>
                 </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Rent
+                        <i class="fas fa-hand-holding-usd"></i> Rent
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/rents">View due rents</a>
                         <a class="dropdown-item" href="/allRents">View paid rents</a>
                     </div>
                 </li>
-
+                
             </ul>
             @endif
             <!-- Right Side Of Navbar -->

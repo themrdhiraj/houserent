@@ -13,7 +13,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Name</div>
                             </div>
-                            {{ Form::text('people_name',$people->people_name,['class' => 'form-control', 'placeholder' => 'Joe', 'id' => 'people_name']) }}
+                            {{ Form::text('people_name',$people->people_name,['class' => 'form-control', 'placeholder' => 'eg. Joe', 'id' => 'people_name']) }}
                         </div>
                     </div>
                     <div class="form-group">
@@ -22,7 +22,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Contact</div>
                             </div>
-                            {{ Form::tel('people_contact',$people->people_contact,['class' => 'form-control', 'placeholder' => '98XXXXXXXX', 'id' => 'people_contact', 'pattern' => '[0-9]{10}']) }}
+                            {{ Form::tel('people_contact',$people->people_contact,['class' => 'form-control', 'placeholder' => 'eg. 98XXXXXXXX', 'id' => 'people_contact', 'pattern' => '[0-9]{10}']) }}
                         </div>
                     </div>
                     <div class="form-group">
@@ -31,7 +31,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Other contact</div>
                             </div>
-                            {{ Form::tel('people_contact_other',$people->people_contact_other,['class' => 'form-control', 'placeholder' => '98XXXXXXXX', 'id' => 'people_contact_other', 'pattern' => '[0-9]{10}']) }}
+                            {{ Form::tel('people_contact_other',$people->people_contact_other,['class' => 'form-control', 'placeholder' => 'eg. 98XXXXXXXX', 'id' => 'people_contact_other', 'pattern' => '[0-9]{10}']) }}
                         </div>
                     </div>
                     <div class="form-group">
@@ -40,7 +40,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Home address</div>
                             </div>
-                            {{ Form::text('people_home_address',$people->people_home_address,['class' => 'form-control', 'placeholder' => 'Ramechhap', 'id' => 'people_home_address']) }}
+                            {{ Form::text('people_home_address',$people->people_home_address,['class' => 'form-control', 'placeholder' => 'eg. Ramechhap', 'id' => 'people_home_address']) }}
                         </div>
                     </div>
                     <div class="form-group">
@@ -58,7 +58,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Total persons living</div>
                             </div>
-                            {{Form::number('people_total',$people->people_total,['class' => 'form-control', 'placeholder' => '5', 'id' => 'people_total'])}}
+                            {{Form::number('people_total',$people->people_total,['class' => 'form-control', 'placeholder' => 'eg. 5', 'id' => 'people_total'])}}
                         </div>
                     </div>
                     <div class="form-group">

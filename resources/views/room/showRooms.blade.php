@@ -4,7 +4,7 @@
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<div class="card">
-				<div class="card-header">Room planning <a href="/profile" class="btn btn-success float-right">Change floors</a></div>
+				<div class="card-header">Room planning <a href="/profile" class="btn btn-success float-right">Manage floors</a></div>
 				<div class="card-body">
 					<nav>
 						<div class="nav nav-tabs" id="nav-tab" role="tablist">

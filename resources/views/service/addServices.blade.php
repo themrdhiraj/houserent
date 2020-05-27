@@ -13,7 +13,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Services</div>
                             </div>
-                            {{ Form::text('service_name','',['class' => 'form-control', 'placeholder' => 'Water', 'id' => 'service']) }}
+                            {{ Form::text('service_name','',['class' => 'form-control', 'placeholder' => 'eg. Water', 'id' => 'service']) }}
                         </div>
                     </div>
                     <div class="form-group">
@@ -22,7 +22,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">Money <span class="badge badge-info">*per month</span></div>
                             </div>
-                            {{Form::number('service_money','',['class' => 'form-control', 'placeholder' => '5000', 'id' => 'serviceMoney'])}}
+                            {{Form::number('service_money','',['class' => 'form-control', 'placeholder' => 'eg. 5000', 'id' => 'serviceMoney'])}}
                         </div>
                     </div>
                     <div class="form-group">

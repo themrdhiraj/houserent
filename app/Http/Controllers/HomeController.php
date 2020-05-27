@@ -57,4 +57,11 @@ class HomeController extends Controller
             return redirect('/profile')->with('error', 'There was a problem while updating floors!');
         }
     }
+
+    public function help()
+    {
+        return view('help');
+    }
+
+
 }
